@@ -77,34 +77,363 @@ body{
     background:#ff2f6d;
     transform:scale(1.05);
 }
-.completed{
-    text-decoration: line-through;
-    opacity: 0.5;
+/* ===============================
+   Task Box
+================================ */
+
+.task-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:40px;
+}
+
+#taskInput{
+    width:400px;
+    padding:15px 20px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    font-size:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+#addTaskBtn{
+    padding:15px 28px;
+    border:none;
+    border-radius:50px;
+    background:#ff5c8a;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#addTaskBtn:hover{
+    background:#ff2f6d;
+    transform:scale(1.05);
+}
+
+/* ===============================
+   Task List
+================================ */
+
+#taskList{
+    list-style:none;
+    margin-top:40px;
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#taskList li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:15px 20px;
+    margin-bottom:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .buttons{
     display:flex;
-    gap:8px;
+    gap:10px;
 }
 
 .complete-btn,
 .edit-btn,
 .delete-btn{
     border:none;
+    padding:10px 15px;
+    border-radius:10px;
     cursor:pointer;
-    padding:8px 12px;
-    border-radius:8px;
     font-size:16px;
+    transition:0.3s;
 }
 
 .complete-btn{
-    background:#7ed957;
+    background:#6bd66b;
+    color:white;
 }
 
 .edit-btn{
-    background:#ffd966;
+    background:#ffd93d;
 }
 
 .delete-btn{
     background:#ff6b6b;
+    color:white;
 }
+
+.complete-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover{
+    transform:scale(1.08);
+}
+
+.completed{
+    text-decoration:line-through;
+    color:gray;
+    opacity:0.6;
+}
+/* ===============================
+   Progress Bar
+================================ */
+
+.progress-container{
+    width:600px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.progress-bar{
+    width:100%;
+    height:20px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#progressFill{
+    width:0%;
+    height:100%;
+    background:#6bd66b;
+    transition:0.5s;
+}
+
+#progressText{
+    margin-top:12px;
+    font-size:18px;
+    font-weight:600;
+}
+/* ===============================
+   Theme Button
+================================ */
+
+#themeToggle{
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    background:#333;
+    color:white;
+}
+
+/* ===============================
+   Dark Mode
+================================ */
+
+.dark-mode{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark-mode .navbar{
+    background:#2b2b2b;
+}
+
+.dark-mode .logo{
+    color:#ff79c6;
+}
+
+.dark-mode #taskList li{
+    background:#333;
+    color:white;
+}
+
+.dark-mode #taskInput{
+    background:#444;
+    color:white;
+}
+
+.dark-mode .hero{
+    background:linear-gradient(to bottom,#202020,#101010);
+}
+
+.dark-mode .hero-content h1,
+.dark-mode .hero-content p{
+    color:white;
+}
+/* ===============================
+   Search Box
+================================ */
+
+.search-box{
+    margin-top:40px;
+    text-align:center;
+}
+
+#searchInput{
+
+    width:500px;
+    padding:15px 20px;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    font-size:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+/* ===============================
+   Filter Buttons
+================================ */
+
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:25px 0;
+}
+
+.filter-btn{
+
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#ececec;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.filter-btn:hover{
+
+    background:#ff5c8a;
+    color:white;
+
+}
+
+.filter-btn.active{
+
+    background:#ff5c8a;
+    color:white;
+
+}
+/* ===============================
+   XP Card
+================================ */
+
+.xp-card{
+
+    width:600px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+}
+
+.xp-card h2{
+
+    margin-bottom:15px;
+
+}
+
+.xp-bar{
+
+    height:18px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+
+}
+
+#xpFill{
+
+    width:0%;
+    height:100%;
+    background:gold;
+    transition:.5s;
+
+}
+/* ===============================
+   Streak Card
+================================ */
+
+.streak-card{
+
+    width:600px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+.streak-card h2{
+
+    margin-top:15px;
+
+    color:#ff5c8a;
+
+    font-size:35px;
+
+}
+/* ===============================
+   Sakura Petals
+================================ */
+
+#petals{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:999;
+}
+
+.petal{
+
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    background:pink;
+
+    border-radius:60% 40% 60% 40%;
+
+    animation:fall linear infinite;
+
+    opacity:.8;
+
+}
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+    }
+
+}
+

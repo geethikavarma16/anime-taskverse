@@ -10,19 +10,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="petals"></div>
     <nav class="navbar">
         <div class="logo">
             🌸 Anime TaskVerse
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Tasks</a></li>
-            <li><a href="#">Goals</a></li>
-            <li><a href="#">Rewards</a></li>
-            <li><a href="#">Profile</a></li>
+            <a href="index.html">Home</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="goals.html">Goals</a>
+            <a href="rewards.html">Rewards</a>
+            <a href="profile.html">Profile</a>
         </ul>
+        <button id="themeToggle">🌙</button>
     </nav>
     <section class="hero">
 
@@ -34,9 +35,82 @@
             Turn every task into an adventure and grow your peaceful world.
         </p>
 
-        <button class="start-btn">
-            Start Today's Journey
-        </button>
+        <div class="task-box">
+
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter your task..."
+    >
+
+    <button id="addTaskBtn">
+        Add Task
+    </button>
+
+</div>
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search tasks..."
+    >
+
+</div>
+<div class="filter-buttons">
+
+    <button class="filter-btn active" data-filter="all">
+        All
+    </button>
+
+    <button class="filter-btn" data-filter="completed">
+        Completed
+    </button>
+
+    <button class="filter-btn" data-filter="pending">
+        Pending
+    </button>
+
+</div>
+
+<div class="progress-container">
+
+    <h3>Your Progress</h3>
+
+    <div class="progress-bar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+    <p id="progressText">0 / 0 Completed</p>
+
+</div>
+<div class="xp-card">
+
+    <div class="xp-card">
+
+    <h2>⭐ Level <span id="level">1</span></h2>
+
+    <p>XP: <span id="xp">0</span> / 100</p>
+
+    <div class="xp-bar">
+        <div id="xpFill"></div>
+    </div>
+
+</div>
+
+<div class="streak-card">
+
+    🔥 Daily Streak
+
+    <h2 id="streakDays">0 Days</h2>
+
+</div>
+
+</div>
+
+<ul id="taskList"></ul>
 
     </div>
 
